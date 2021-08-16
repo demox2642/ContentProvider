@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UsersAndCourses</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="course_id">Course ID:</string>
+    <string name="course_title">Course Title:</string>
+    <string name="clean_course_list">Clean Course list</string>
+    <string name="refresh_course">Refresh course</string>
+    <string name="add_course">Add course</string>
+</resources>

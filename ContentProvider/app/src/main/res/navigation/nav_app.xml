@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.skilbox.contentprovider.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_contactFragment"
+            app:destination="@id/Contact" />
+        <action
+            android:id="@+id/action_mainFragment_to_fileShareFragment"
+            app:destination="@id/fileShareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fileShareFragment"
+        android:name="com.skilbox.contentprovider.FileShareFragment"
+        android:label="fragment_file_share"
+        tools:layout="@layout/fragment_file_share" />
+    <navigation android:id="@+id/Contact"
+        app:startDestination="@id/contactFragment">
+        <fragment
+            android:id="@+id/detailContactFragment"
+            android:name="com.skilbox.contentprovider.DetailContactFragment"
+            android:label="fragment_detail_contact"
+            tools:layout="@layout/fragment_detail_contact">
+            <argument
+                android:name="contact_id"
+                app:argType="integer" />
+        </fragment>
+        <fragment
+            android:id="@+id/addContact"
+            android:name="com.skilbox.contentprovider.AddContact"
+            android:label="fragment_add_contact"
+            tools:layout="@layout/fragment_add_contact" />
+        <fragment
+            android:id="@+id/contactFragment"
+            android:name="com.skilbox.contentprovider.ContactFragment"
+            android:label="fragment_contact_list"
+            tools:layout="@layout/fragment_contact_list">
+            <action
+                android:id="@+id/action_contactFragment_to_addContact"
+                app:destination="@id/addContact" />
+            <action
+                android:id="@+id/action_contactFragment_to_detailContactFragment"
+                app:destination="@id/detailContactFragment" />
+        </fragment>
+    </navigation>
+</navigation>
